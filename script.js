@@ -1,7 +1,10 @@
 let boutonPierre = document.getElementById("Start")
+let verifStart = 0;
+var refreshIntervalId
 
 boutonPierre.addEventListener('click',()=>{
-    Start()
+    verif()
+    verifStart++;
 })
 
 
@@ -12,7 +15,7 @@ const timerElement = document.getElementById("timer")
 timerElement.innerText = departMinutes
 
 function Start(){
-    setInterval(() => {
+    refreshIntervalId = setInterval(() => {
     let minutes = parseInt(temps / 60, 10)
     let secondes = parseInt(temps % 60, 10)
 
@@ -22,4 +25,15 @@ function Start(){
     timerElement.innerText = `${minutes}:${secondes}`
     temps = temps <= 0 ? 0 : temps - 1
     }, 1000)
+}
+
+function verif(){
+    if (verifStart != 0){
+        clearInterval(refreshIntervalId);
+        timerElement.innerText = departMinutes
+        return
+    }
+    else{
+        Start()
+    }
 }
