@@ -1,10 +1,11 @@
 #corp{
+    position: absolute;
     background-color: red;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
 }
 
 main{
@@ -15,7 +16,7 @@ main{
 
 h1{
     color: white;
-    font-size: 5cqmax;
+    font-size: 60px;
 }
 
 #travail{
