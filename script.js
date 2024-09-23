@@ -10,7 +10,11 @@ boutonDemarage.addEventListener('click',()=>{
 
 
 
-const departMinutes = 25
+const departMinutes = 1
+const departPause = 1
+
+let pause = false
+
 let temps = departMinutes * 60 - 1
 
 const tempsElement = document.getElementById("temps")
@@ -18,14 +22,27 @@ tempsElement.innerText = departMinutes + " : 00"
 
 function Demarer(){
     boucle = setInterval(() => {
-    let minutes = parseInt(temps / 60, 10)
-    let secondes = parseInt(temps % 60, 10)
 
-    minutes = minutes < 10 ? "0" + minutes : minutes
-    secondes = secondes < 10 ? "0" + secondes : secondes
+        console.log(temps)
+        
+        let minutes = parseInt(temps / 60, 10)
+        let secondes = parseInt(temps % 60, 10)
 
-    tempsElement.innerText = `${minutes} : ${secondes}`
-    temps = temps <= 0 ? 0 : temps - 1
+        minutes = minutes < 10 ? "0" + minutes : minutes
+        secondes = secondes < 10 ? "0" + secondes : secondes
+
+        tempsElement.innerText = `${minutes} : ${secondes}`
+        if(temps == 0){
+            if(pause == false){
+                temps = departPause * 60  + 1
+                pause = true
+            }else {
+                temps = departMinutes * 60 + 1
+                pause = false
+            }
+        }
+        temps = temps <= 0 ? 0 : temps - 1
+        
     }, 1000)
 }
 
