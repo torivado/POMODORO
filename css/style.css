@@ -1,9 +1,10 @@
-body{
+#corp{
     background-color: red;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: auto;
+    height: auto;
 }
 
 main{
@@ -15,6 +16,14 @@ main{
 h1{
     color: white;
     font-size: 5cqmax;
+}
+
+#travail{
+    color: aliceblue;
+}
+
+#pause{
+    color : gray;
 }
 
 .texte{
