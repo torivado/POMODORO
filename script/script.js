@@ -1,4 +1,4 @@
-let boutonDemarage = document.getElementById("Demaree")
+let boutonDemarage = document.getElementById("demaree")
 let verifDemaree = 0
 var boucle
 
@@ -10,7 +10,7 @@ boutonDemarage.addEventListener('click',()=>{
 
 
 
-const departMinutes = 1
+const departMinutes = 25
 const departPause = 1
 
 let pause = false
@@ -51,12 +51,12 @@ function verif(){
         clearInterval(boucle)
         temps = departMinutes * 60
         tempsElement.innerText = departMinutes + " : 00"
-        document.querySelector(".icone").innerHTML = '<i class="fa-solid fa-play"></i>';
+        document.querySelector(".icone").innerHTML = '<i class="fa-solid fa-play fa-3x"></i>';
         verifDemaree = -1
         return
     }
     else{
         Demarer()
-        document.querySelector(".icone").innerHTML = '<i class="fa-solid fa-arrows-rotate"></i>';
+        document.querySelector(".icone").innerHTML = '<i class="fa-solid fa-arrows-rotate fa-3x"></i>';
     }
 }

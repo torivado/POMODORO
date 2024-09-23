@@ -6,26 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/5b336d71c9.js" crossorigin="anonymous"></script>
     <title>POMODORO</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <main>
+    <header>
         <h1>TIMER POMODORO</h1>
+    </header>
+    <main>
+        
 
-        <div>
+        <div class="texte">
             <h2>Travail</h2>
             <h2>Pause</h2>
         </div>
 
-        <div id="temps"></div>
+        <div class="contenaire_tmp">
+            <p id="temps"></p>
+        </div>
+        
 
         
-        <button id = "Demaree">
+        <button id = "demaree">
             <div  class="icone">
-                <i class="fa-solid fa-play"></i>
+                <i class="fa-solid fa-play fa-3x"></i>
             </div>
         </button>
         
     </main>
-    <script defer src="script.js"></script>
+    <script defer src="./script/script.js"></script>
 </body>
 </html>
