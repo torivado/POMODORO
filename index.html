@@ -9,29 +9,36 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body id="corp">
-    
+    <div id = "formulaire">
+        <h3>Parametrer votre <br> POMODORO</h3>
+        <ul>
+            <li>
+                <label for="tempsTravail">Temps travail&nbsp;:</label>
+                <input type="number" id="cronoTravail"  />
+            </li>
+            <li>
+                <label for="tempsPause">Temps pause&nbsp;:</label>
+                <input type="number" id="cronoPause" />
+            </li>
+        </ul>
+        
+        <div id = "boutonFormulaire">
+            <button id = "validee">
+                <i class="fa-solid fa-check fa-3xs"></i>
+            </button>
+            <button id = "annulee">
+                <i class="fa-solid fa-cancel fa-3xs"></i>
+            </button>
+        </div>
+        
+
+    </div>
     <header>
         <h1>TIMER POMODORO</h1>
     </header>
     <main>
-
-        <ul>
-            <li>
-                <label for="tempsTravail">temps travail&nbsp;:</label>
-                <input type="number" id="cronoTravail" name="user_name" />
-            </li>
-            <li>
-                <label for="tempsPause">temps pause&nbsp;:</label>
-                <input type="number" id="cronoPause" name="user_email" />
-            </li>
-        </ul>
-
-        <button id = "validee">
-            <i class="fa-solid fa-check fa-3xs"></i>
-        </button>
-        <button id = "annulee">
-            <i class="fa-solid fa-cancel fa-3xs"></i>
-        </button>
+        
+        
 
         
 

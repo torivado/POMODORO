@@ -106,7 +106,13 @@ let tempsPause = document.getElementById("cronoPause")
 
 boutonValidee.addEventListener('click',()=>{
     change()
+    formulaire.style.display = 'none'
 })
+
+boutonAnnulee.addEventListener('click',()=>{
+    formulaire.style.display = 'none'
+})
+
 boutonParametrer.addEventListener('click',()=>{
     clearInterval(boucle)
     temps = departMinutes * 60
@@ -118,6 +124,7 @@ boutonParametrer.addEventListener('click',()=>{
     pauseText.style.color = 'gray'
     travailText.style.color = 'white'
     verifDemaree = 0
+    formulaire.style.display = 'flex'
 })
 
 function change(){

@@ -98,3 +98,54 @@ h2{
     font-size: 3vw;
     color: white;
 }
+
+#formulaire{
+    position: absolute;
+    width: 50vw;
+    height: 50vw;
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    opacity: 98%;
+    border-radius: 10%;
+    align-items: center;
+    justify-content: center;
+}
+
+h3{
+    font-size: 3vw;
+    text-align: center;
+}
+
+label{
+    font-size: 5vw;
+}
+
+input{
+    font-size: 1vw;
+}
+
+
+#boutonFormulaire{
+    background-color: lightgrey;
+}
+#validee,#annulee{
+    background-color: lightgrey;
+    border: solid 3px lightgrey;
+}
+
+
+
+.fa-check{
+    font-size: 3vw;
+    color: green;
+}
+
+.fa-cancel{
+    font-size: 3vw;
+    color: red;
+}
+
+ul {
+    list-style-type: none;
+}
