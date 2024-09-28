@@ -1,4 +1,5 @@
 let boutonDemarage = document.getElementById("demaree")
+let boutonParametrer = document.getElementById("parametrer")
 let corp = document.getElementById("corp")
 let travailText = document.getElementById("travail")
 let pauseText = document.getElementById("pause")
@@ -9,8 +10,6 @@ boutonDemarage.addEventListener('click',()=>{
     verif()
     verifDemaree++
 })
-
-
 
 
 const departMinutes = 0.05
@@ -35,6 +34,7 @@ function Demarer(){
                 temps = departPause * 60  + 1
                 corp.style.backgroundColor = 'green'
                 demaree.style.backgroundColor= 'green'
+                parametrer.style.backgroundColor= 'green'
                 pauseText.style.color = 'white'
                 travailText.style.color = 'gray'
                 pause = true
@@ -42,6 +42,7 @@ function Demarer(){
                 temps = departMinutes * 60 + 1
                 corp.style.backgroundColor = 'red'
                 demaree.style.backgroundColor = 'red'
+                parametrer.style.backgroundColor= 'red'
                 pauseText.style.color = 'gray'
                 travailText.style.color = 'white'
                 pause = false
@@ -59,9 +60,10 @@ function verif(){
         clearInterval(boucle)
         temps = departMinutes * 60
         horloge();
-        document.querySelector(".icone").innerHTML = '<i class="fa-solid fa-play fa-3x"></i>';
+        document.querySelector("#demaree").innerHTML = '<i class="fa-solid fa-play fa-3x"></i>';
         corp.style.backgroundColor = 'red'
         demaree.style.backgroundColor = 'red'
+        parametrer.style.backgroundColor= 'red'
         pauseText.style.color = 'gray'
         travailText.style.color = 'white'
         verifDemaree = -1
@@ -69,7 +71,7 @@ function verif(){
     }
     else{
         Demarer()
-        document.querySelector(".icone").innerHTML = '<i class="fa-solid fa-arrows-rotate fa-3x"></i>';
+        document.querySelector("#demaree").innerHTML = '<i class="fa-solid fa-arrows-rotate fa-3x"></i>';
     }
 }
 
@@ -82,3 +84,8 @@ function horloge(){
     
     tempsElement.innerText = `${minutes} : ${secondes}`
 }
+
+
+
+let boutonValidee = document.getElementById("validee")
+let boutonAnnulee = document.getElementById("annulee")

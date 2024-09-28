@@ -8,41 +8,62 @@
     <title>POMODORO</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-    <div id="corp">
-        <header>
-            <h1>TIMER POMODORO</h1>
-        </header>
-        <main>
-            
+<body id="corp">
     
-            <div class="texte">
-                <div id="travail">
-                    <h2>Travail</h2>
-                </div>
-                <div id="pause">
-                    <h2>Pause</h2>
-                </div>
-                
-                
+    <header>
+        <h1>TIMER POMODORO</h1>
+    </header>
+    <main>
+
+        <ul>
+            <li>
+                <label for="tempsTravail">temps travail&nbsp;:</label>
+                <input type="number" id="cronoTravail" name="user_name" />
+            </li>
+            <li>
+                <label for="tempsPause">temps pause&nbsp;:</label>
+                <input type="number" id="cronoPause" name="user_email" />
+            </li>
+        </ul>
+
+        <button id = "validee">
+            <i class="fa-solid fa-check fa-3xs"></i>
+        </button>
+        <button id = "annulee">
+            <i class="fa-solid fa-cancel fa-3xs"></i>
+        </button>
+
+        
+
+        <div class="texte">
+            <div id="travail">
+                <h2>Travail</h2>
             </div>
-    
-            <div class="contenaire_tmp">
-                <p id="temps"></p>
+            <div id="pause">
+                <h2>Pause</h2>
             </div>
             
-    
             
+        </div>
+
+        <div class="contenaire_tmp">
+            <p id="temps"></p>
+        </div>
+        
+
+        <div id = "bouton">
             <button id = "demaree">
-                <span  class="icone">
-                    <i class="fa-solid fa-play fa-3x"></i>
-                    
-                </span>
+                <i class="fa-solid fa-play fa-3x" ></i>
             </button>
-            
-        </main>
-        <script defer src="./script/script.js"></script>
-    </div>
+            <button id = "parametrer">
+                <i class="fa-solid fa-gear fa-3x"></i>
+            </button>
+        </div>
+        
+        
+    </main>
+    <script defer src="./script/script.js"></script>
+
     
 </body>
 </html>
