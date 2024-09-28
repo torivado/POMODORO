@@ -1,11 +1,9 @@
-#corp{
-    position: absolute;
+body{
+    
     background-color: red;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 100%;
 }
 
 main{
@@ -14,9 +12,15 @@ main{
     align-items: center;
 }
 
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 h1{
     color: white;
-    font-size: 60px;
+    font-size: 7vw;
 }
 
 #travail{
@@ -31,10 +35,16 @@ h1{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 350px;
+    align-items: center;
+    width: 60vw;
+    height: 10vw;
     border-radius: 10px;
     box-shadow: 5px 5px 15px 10px black;
 
+}
+
+h2{
+    font-size: 5vw;
 }
 
 .contenaire_tmp{
