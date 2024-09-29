@@ -216,12 +216,12 @@ ul {
 @media only screen and (max-width: 900px) {
     h1{
         margin-top: 1vh;
-        margin-bottom: 2vh; 
-        font-size: 5vw;
+        margin-bottom: 8vh; 
+        font-size: 9vw;
     }
 
     .fa-cancel,.fa-check{
-        font-size: 3vw;
+        font-size: 6vw;
     }
 
     #validee,#annulee{
@@ -229,26 +229,26 @@ ul {
     }
 
     li{
-        margin-bottom: 1.5vh;
+        margin-bottom: 3vh;
     }
 
     label{
-        font-size: 2vw;
+        font-size: 6vw;
     }
     
     input{
-        font-size: 1vw;
+        font-size: 2vw;
     }
     
     #boutonFormulaire{
         margin-top: 1.5vh;
     }
     h3{
-        font-size: 3vw;
+        font-size: 6vw;
         margin-bottom: 3vh;
     }
     .fa-play,.fa-gear,.fa-arrows-rotate{
-        font-size: 4vw;
+        font-size: 5vw;
     }
     
     .fa-play:hover,.fa-gear:hover,.fa-arrows-rotate:hover{
@@ -264,40 +264,40 @@ ul {
     }
     .texte{
 
-        width: 40vw;
-        height: 5vw;
-        margin-bottom: 2.5vh;
+        width: 60vw;
+        height: 10vw;
+        margin-bottom: 4vh;
     }
     
     h2{
-        font-size: 3vw;
+        font-size: 5vw;
     }
     
     .contenaire_tmp{
         margin-top: 3vw;
-        height: 25vw;
-        width: 25vw;
+        height: 45vw;
+        width: 45vw;
 
     }
     
     
     #temps{
-        height: 20vw;
-        width: 20vw;
-        font-size: 6vw;
+        height: 40vw;
+        width: 40vw;
+        font-size: 10vw;
         
     }
     
     #bouton{
         height: 10vw;
         width: 20vw;
-        margin: 1vh;
-        margin-top: 2.5vh;
+        margin: 3vh;
+        margin-top: 5vh;
     }
     
     #demaree,#parametrer{
-        width: 6vw;
-        height: 6vw;
+        width: 9vw;
+        height: 9vw;
         
     }
 }
