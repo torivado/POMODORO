@@ -165,7 +165,7 @@ function change(){
 
 //Permet de vérifier les champs du formulaire
 function verifFormulaire(valeur){
-    if (valeur <= 1 || valeur > 120){
+    if (valeur < 1 || valeur > 120){
         alert("Attention le temps doit etre comppris entre 1 et 120 min");
         return false
     }

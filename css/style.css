@@ -18,8 +18,10 @@ header{
 }
 
 h1{
+    margin-top: 1vh;
+    margin-bottom: 2vh;
     color: white;
-    font-size: 7vw;
+    font-size: 5vw;
 }
 
 #travail{
@@ -35,23 +37,23 @@ h1{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 60vw;
-    height: 10vw;
+    width: 40vw;
+    height: 5vw;
     border-radius: 10px;
     box-shadow: 5px 5px 15px 10px black;
-
+    margin-bottom: 2.5vh;
 }
 
 h2{
-    font-size: 5vw;
+    font-size: 3vw;
 }
 
 .contenaire_tmp{
-    margin-top: 15%;
+    margin-top: 3vw;
     display: flex;
     border-radius: 50%;
-    height: 40vw;
-    width: 40vw;
+    height: 25vw;
+    width: 25vw;
     align-items: center;
     justify-content: center;
     box-shadow: 5px 5px 15px 10px black;
@@ -63,22 +65,24 @@ h2{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 30vw;
-    width: 30vw;
+    height: 20vw;
+    width: 20vw;
     border: solid 5px whitesmoke;
     border-radius: 50%;
-    font-size: 8vw;
+    font-size: 6vw;
     
 }
 
 #bouton{
+
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     height: 10vw;
     width: 20vw;
-    margin: 3vh;
+    margin: 1vh;
+    margin-top: 2.5vh;
 }
 
 #demaree,#parametrer{
@@ -95,46 +99,51 @@ h2{
 
 
 .fa-play,.fa-gear,.fa-arrows-rotate{
-    font-size: 3vw;
+    font-size: 4vw;
     color: white;
 }
 
+.fa-play:hover,.fa-gear:hover,.fa-arrows-rotate:hover{
+    font-size: 4.5vw;
+}
+
+
 #formulaire{
     position: absolute;
-    width: 50vw;
-    height: 50vw;
     display: none;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-bottom: 10vh;
     flex-direction: column;
     background-color: lightgray;
     opacity: 98%;
     border-radius: 10%;
     align-items: center;
-    justify-content: center;
 }
 
 h3{
     font-size: 3vw;
     text-align: center;
+    color: midnightblue;
+    margin-bottom: 3vh;
 }
 
 label{
-    font-size: 5vw;
+    font-size: 2vw;
 }
 
 input{
     font-size: 1vw;
 }
 
-
 #boutonFormulaire{
-    background-color: lightgrey;
+    margin-top: 1.5vh;
 }
 #validee,#annulee{
-    background-color: lightgrey;
-    border: solid 3px lightgrey;
+    border-radius: 10%;
+    margin: 2vh;
+    border: none;
 }
-
-
 
 .fa-check{
     font-size: 3vw;
@@ -146,6 +155,21 @@ input{
     color: red;
 }
 
+#validee:hover{
+    background-color: gray;
+}
+
+#annulee:hover{
+    background-color: gray;
+}
+
+
+
+li{
+    margin-bottom: 1.5vh;
+}
+
 ul {
     list-style-type: none;
 }
+
