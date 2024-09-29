@@ -12,7 +12,7 @@ boutonDemarage.addEventListener('click',()=>{
 })
 
 
-
+//Permet de gérer la valeur du temps de travail à l'initialisation
 let departMinutes
 if(window.localStorage.getItem("tempsCronoTravail") == null){
     departMinutes = 25;
@@ -21,7 +21,7 @@ if(window.localStorage.getItem("tempsCronoTravail") == null){
 }
 
 
-
+//Permet de gérer la valeur du temps de pause à l'initialisation
 let departPause
 if(window.localStorage.getItem("tempsCronoPause") == null){
     departPause = 5
@@ -39,7 +39,7 @@ let temps = departMinutes * 60
 horloge()
 
 
-
+//Permet de gérer le moment où les couleurs doivent changer
 function Demarer(){
     boucle = setInterval(() => {
         if(temps == 0){
@@ -57,7 +57,7 @@ function Demarer(){
 }
 
 
-
+//Permet de voir l'état du cronometre et soit le lancer soit le couper
 function verif(){
     if (verifDemaree != 0){
         clearInterval(boucle)
@@ -74,9 +74,8 @@ function verif(){
 }
 
 
-
+//Permet de gérer le temps du chronomètre et de l'afficher
 function horloge(){
-    
     let minutes = parseInt(temps / 60, 10)
     let secondes = parseInt(temps % 60, 10)
     
@@ -89,7 +88,7 @@ function horloge(){
 
 
 
-
+// Permet de mettre la couleur en mode pause (vert)
 function couleurPause(){
     temps = departPause * 60  + 1
     corp.style.backgroundColor = 'green'
@@ -100,6 +99,7 @@ function couleurPause(){
     pause = true
 }
 
+// Permet de mettre la couleur en mode travail (rouge)
 function couleurTravail(){
     temps = departMinutes * 60
     corp.style.backgroundColor = 'red'
@@ -149,7 +149,7 @@ boutonParametrer.addEventListener('click',()=>{
 
 
 
-
+//Permet de traiter le formulaire en modifiant le temps et en stoquant les valeurs
 function change(){
     if(verifFormulaire(tempsTravail.value) == false || verifFormulaire(tempsPause.value) == false){
         return
@@ -163,7 +163,7 @@ function change(){
     horloge();
 }
 
-
+//Permet de vérifier les champs du formulaire
 function verifFormulaire(valeur){
     if (valeur <= 1 || valeur > 120){
         alert("Attention le temps doit etre comppris entre 1 et 120 min");
