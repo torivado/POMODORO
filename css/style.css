@@ -103,7 +103,7 @@ h2{
     position: absolute;
     width: 50vw;
     height: 50vw;
-    display: flex;
+    display: none;
     flex-direction: column;
     background-color: lightgray;
     opacity: 98%;

@@ -11,13 +11,16 @@ boutonDemarage.addEventListener('click',()=>{
     verifDemaree++
 })
 
-let departMinutes
 
+
+let departMinutes
 if(window.localStorage.getItem("tempsCronoTravail") == null){
     departMinutes = 25;
 }else {
     departMinutes = window.localStorage.getItem("tempsCronoTravail")
 }
+
+
 
 let departPause
 if(window.localStorage.getItem("tempsCronoPause") == null){
@@ -41,21 +44,9 @@ function Demarer(){
     boucle = setInterval(() => {
         if(temps == 0){
             if(pause == false){
-                temps = departPause * 60  + 1
-                corp.style.backgroundColor = 'green'
-                demaree.style.backgroundColor= 'green'
-                parametrer.style.backgroundColor= 'green'
-                pauseText.style.color = 'white'
-                travailText.style.color = 'gray'
-                pause = true
+                couleurPause();
             }else {
-                temps = departMinutes * 60 + 1
-                corp.style.backgroundColor = 'red'
-                demaree.style.backgroundColor = 'red'
-                parametrer.style.backgroundColor= 'red'
-                pauseText.style.color = 'gray'
-                travailText.style.color = 'white'
-                pause = false
+                couleurTravail();
             }
         }
         temps = temps <= 0 ? 0 : temps - 1
@@ -65,17 +56,14 @@ function Demarer(){
     }, 1000)
 }
 
+
+
 function verif(){
     if (verifDemaree != 0){
         clearInterval(boucle)
-        temps = departMinutes * 60
+        couleurTravail();
         horloge();
         document.querySelector("#demaree").innerHTML = '<i class="fa-solid fa-play fa-3x"></i>';
-        corp.style.backgroundColor = 'red'
-        demaree.style.backgroundColor = 'red'
-        parametrer.style.backgroundColor= 'red'
-        pauseText.style.color = 'gray'
-        travailText.style.color = 'white'
         verifDemaree = -1
         return
     }
@@ -84,6 +72,8 @@ function verif(){
         document.querySelector("#demaree").innerHTML = '<i class="fa-solid fa-arrows-rotate fa-3x"></i>';
     }
 }
+
+
 
 function horloge(){
     
@@ -95,6 +85,33 @@ function horloge(){
     
     tempsElement.innerText = `${minutes} : ${secondes}`
 }
+
+
+
+
+
+function couleurPause(){
+    temps = departPause * 60  + 1
+    corp.style.backgroundColor = 'green'
+    demaree.style.backgroundColor= 'green'
+    parametrer.style.backgroundColor= 'green'
+    pauseText.style.color = 'white'
+    travailText.style.color = 'gray'
+    pause = true
+}
+
+function couleurTravail(){
+    temps = departMinutes * 60
+    corp.style.backgroundColor = 'red'
+    demaree.style.backgroundColor = 'red'
+    parametrer.style.backgroundColor= 'red'
+    pauseText.style.color = 'gray'
+    travailText.style.color = 'white'
+    pause = false
+}
+
+
+
 
 
 
@@ -113,21 +130,30 @@ boutonAnnulee.addEventListener('click',()=>{
     formulaire.style.display = 'none'
 })
 
+
+
+
 boutonParametrer.addEventListener('click',()=>{
-    clearInterval(boucle)
-    temps = departMinutes * 60
-    horloge();
-    document.querySelector("#demaree").innerHTML = '<i class="fa-solid fa-play fa-3x"></i>';
-    corp.style.backgroundColor = 'red'
-    demaree.style.backgroundColor = 'red'
-    parametrer.style.backgroundColor= 'red'
-    pauseText.style.color = 'gray'
-    travailText.style.color = 'white'
-    verifDemaree = 0
-    formulaire.style.display = 'flex'
+    if(formulaire.style.display == 'flex'){
+        formulaire.style.display = 'none'
+    }
+    else{
+        clearInterval(boucle);
+        couleurTravail();
+        horloge();
+        document.querySelector("#demaree").innerHTML = '<i class="fa-solid fa-play fa-3x"></i>';
+        verifDemaree = 0
+        formulaire.style.display = 'flex'
+    }
 })
 
+
+
+
 function change(){
+    if(verifFormulaire(tempsTravail.value) == false || verifFormulaire(tempsPause.value) == false){
+        return
+    }
     window.localStorage.setItem("tempsCronoTravail",tempsTravail.value )
     window.localStorage.setItem("tempsCronoPause",tempsPause.value )
     departMinutes = tempsTravail.value
@@ -135,4 +161,13 @@ function change(){
     
     temps = departMinutes * 60
     horloge();
+}
+
+
+function verifFormulaire(valeur){
+    if (valeur <= 1 || valeur > 120){
+        alert("Attention le temps doit etre comppris entre 1 et 120 min");
+        return false
+    }
+    return true
 }
