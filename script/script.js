@@ -138,11 +138,6 @@ boutonParametrer.addEventListener('click',()=>{
         formulaire.style.display = 'none'
     }
     else{
-        clearInterval(boucle);
-        couleurTravail();
-        horloge();
-        document.querySelector("#demaree").innerHTML = '<i class="fa-solid fa-play fa-3x"></i>';
-        verifDemaree = 0
         formulaire.style.display = 'flex'
     }
 })
@@ -160,6 +155,11 @@ function change(){
     departPause = tempsPause.value
     
     temps = departMinutes * 60
+    clearInterval(boucle);
+    couleurTravail();
+    horloge();
+    document.querySelector("#demaree").innerHTML = '<i class="fa-solid fa-play fa-3x"></i>';
+    verifDemaree = 0
     horloge();
 }
 
